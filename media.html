@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery - Shree Brijwasi Jatav Samaj Sewa Samiti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Poppins', 'sans-serif'] } } } }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 transition-shadow duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div class="h-10 w-10 bg-yellow-100 rounded-full flex items-center justify-center border border-yellow-300 overflow-hidden">
+                        <i class="fas fa-sun text-yellow-500"></i>
+                    </div>
+                    <span class="font-heading font-semibold text-gray-900 md:text-lg text-sm">
+                        Shree Brijwasi Jatav Samaj Sewa Samiti
+                    </span>
+                </div>
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">About Us</a>
+                    <a href="work.html" class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Our Work</a>
+                    <a href="media.html" class="bg-blue-50 text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Media</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-3">
+                    <a href="donate.html" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md font-medium text-sm transition shadow-sm">Donate Now</a>
+                    <a href="volunteer.html" class="border border-blue-200 text-blue-600 hover:bg-blue-50 px-5 py-2 rounded-md font-medium text-sm transition flex items-center gap-2">
+                        <i class="fas fa-hands-helping"></i> Volunteer
+                    </a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-1 shadow-lg absolute w-full">
+            <a href="index.html" class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">Home</a>
+            <a href="about.html" class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">About Us</a>
+            <a href="work.html" class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">Our Work</a>
+            <a href="media.html" class="block bg-blue-50 text-blue-600 px-3 py-2 rounded-md font-medium text-base">Media</a>
+            <a href="contact.html" class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">Contact</a>
+            <div class="pt-4 flex flex-col gap-2">
+                <a href="donate.html" class="block text-center bg-blue-600 text-white px-3 py-2 rounded-md font-medium text-base">Donate Now</a>
+                <a href="volunteer.html" class="block text-center border border-blue-200 text-blue-600 px-3 py-2 rounded-md font-medium text-base">Volunteer</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow">
+        <div class="text-center mb-12">
+            <h1 class="font-heading text-4xl font-bold text-gray-900 mb-4">Media Gallery</h1>
+            <p class="text-gray-600">Glimpses of our events, medical camps, and community workshops.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Gallery Item 1 -->
+            <div class="group relative h-64 rounded-xl overflow-hidden bg-gray-200 shadow-sm">
+                <img src="media-gallary/img_2.jpg" alt="Event Photo" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <span class="text-white font-medium">Community Gathering</span>
+                </div>
+            </div>
+            <!-- Gallery Item 2 -->
+            <div class="group relative h-64 rounded-xl overflow-hidden bg-gray-200 shadow-sm">
+                <img src="media-gallary/img_3.jpg" alt="Medical Camp" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <span class="text-white font-medium">Rural Medical Camp</span>
+                </div>
+            </div>
+            <!-- Gallery Item 3 -->
+            <div class="group relative h-64 rounded-xl overflow-hidden bg-gray-200 shadow-sm">
+                <img src="media-gallary/img_4.jpg" alt="Women Empowerment" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <span class="text-white font-medium">Skill Development Workshop</span>
+                </div>
+            </div>
+            <!-- Gallery Item 4 -->
+            <div class="group relative h-64 rounded-xl overflow-hidden bg-gray-200 shadow-sm">
+                <img src="media-gallary/img_5.jpg" alt="Education" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <span class="text-white font-medium">Scholarship Distribution</span>
+                </div>
+            </div>
+            <!-- Gallery Item 5 -->
+            <div class="group relative h-64 rounded-xl overflow-hidden bg-gray-200 shadow-sm">
+                <img src="media-gallary/slide2.jpg" alt="Team" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <span class="text-white font-medium">Volunteer Meeting</span>
+                </div>
+            </div>
+            <!-- Gallery Item 6 -->
+            <div class="group relative h-64 rounded-xl overflow-hidden bg-gray-200 shadow-sm">
+                <img src="media-gallary/slide3.jpg" alt="Team Outreach" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <span class="text-white font-medium">Community Outreach</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Menu & Scroll Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+        const nav = document.querySelector('nav');
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('hidden');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !btn.contains(e.target) && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('shadow-sm');
+            }
+        });
+    </script>
+</body>
+<footer class="bg-gray-900 text-gray-300 py-12 mt-auto border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="h-8 w-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-sun text-yellow-500 text-sm"></i>
+                        </div>
+                        <span class="font-heading font-semibold text-white text-lg leading-tight">Shree Brijwasi Jatav Samaj<br>Sewa Samiti</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-6 leading-relaxed pr-4">
+                        Dedicated to uplifting marginalized communities through education, healthcare, and sustainable development. Bridging the gap between privilege and poverty.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="h-9 w-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="h-9 w-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 hover:text-white transition duration-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="h-9 w-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-heading font-semibold text-white text-lg mb-6">Quick Links</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-blue-400 hover:translate-x-1 inline-block transition transform duration-200"><i class="fas fa-chevron-right text-[10px] mr-2"></i> Home</a></li>
+                        <li><a href="about.html" class="hover:text-blue-400 hover:translate-x-1 inline-block transition transform duration-200"><i class="fas fa-chevron-right text-[10px] mr-2"></i> About Us</a></li>
+                        <li><a href="work.html" class="hover:text-blue-400 hover:translate-x-1 inline-block transition transform duration-200"><i class="fas fa-chevron-right text-[10px] mr-2"></i> Our Work</a></li>
+                        <li><a href="media.html" class="hover:text-blue-400 hover:translate-x-1 inline-block transition transform duration-200"><i class="fas fa-chevron-right text-[10px] mr-2"></i> Media Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-400 hover:translate-x-1 inline-block transition transform duration-200"><i class="fas fa-chevron-right text-[10px] mr-2"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading font-semibold text-white text-lg mb-6">Contact Us</h3>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-blue-500"></i>
+                            <span>Bhopal,<br>Madhya Pradesh, India</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-phone text-blue-500 mt-1"></i>
+                            <div class="flex flex-col">
+                                <span>+91 9630145866</span>
+                                <span>+91 9993705606</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-blue-500"></i>
+                            <a href="mailto:vraajyadav1988@gmail.com" class="hover:text-white transition">vraajyadav1988@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Shree Brijwasi Jatav Samaj Sewa Samiti. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-6">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</html>
