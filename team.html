@@ -4,33 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate - Shree Brijwasi Jatav Samaj Sewa Samiti</title>
+    <title>Our Team - Shree Brijwasi Jatav Samaj Sewa Samiti</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Poppins', 'sans-serif'] } } } }
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Poppins', 'sans-serif'] }, colors: { ctaBlue: '#5e94d4' } } } }
     </script>
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar with Dropdown -->
     <nav class="bg-white shadow-sm sticky top-0 z-50 transition-shadow duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
                     <img src="static images/logo.png" alt="Logo"
                         class="h-10 w-10 rounded-full border border-yellow-300 object-cover">
-                    <span class="font-heading font-semibold text-gray-900 md:text-lg text-sm">
-                        Shree Brijwasi Jatav Samaj Sewa Samiti
-                    </span>
+                    <span class="font-heading font-semibold text-gray-900 md:text-lg text-sm">Shree Brijwasi Jatav Samaj
+                        Sewa Samiti</span>
                 </div>
                 <div class="hidden lg:flex items-center space-x-1">
                     <a href="index.html"
                         class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Home</a>
+
+                    <!-- About Us Dropdown (Desktop) -->
                     <div class="relative group">
                         <button
                             class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition flex items-center gap-1">
@@ -40,11 +41,11 @@
                             class="absolute left-0 mt-2 w-48 bg-white border border-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                             <a href="about.html"
                                 class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 border-b border-gray-50">Overview</a>
-                            <a href="team.html"
-                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Our
+                            <a href="team.html" class="block px-4 py-3 text-sm text-blue-600 bg-blue-50 font-medium">Our
                                 Team</a>
                         </div>
                     </div>
+
                     <a href="work.html"
                         class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Our
                         Work</a>
@@ -68,10 +69,14 @@
                 </div>
             </div>
         </div>
+
+        <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-1 shadow-lg absolute w-full">
             <a href="index.html"
                 class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">Home</a>
+
+            <!-- About Us Dropdown (Mobile) -->
             <div class="space-y-1">
                 <button id="mobile-about-toggle"
                     class="w-full text-left text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base flex justify-between items-center">
@@ -86,6 +91,7 @@
                         Team</a>
                 </div>
             </div>
+
             <a href="work.html"
                 class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">Our
                 Work</a>
@@ -103,121 +109,87 @@
         </div>
     </nav>
 
-    <!-- Impact Hero -->
-    <header class="bg-blue-600 text-white py-20 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="font-heading text-4xl md:text-5xl font-bold mb-6">Your generosity creates lasting change.</h1>
-            <p class="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto">100% of your donation directly funds
-                education scholarships, medical relief, and community empowerment programs in marginalized areas.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-800">
-                <div class="bg-white rounded-xl p-6 shadow-lg transform hover:-translate-y-1 transition duration-300">
-                    <i class="fas fa-book-open text-blue-500 text-3xl mb-4"></i>
-                    <h3 class="font-heading font-bold text-xl mb-2">₹1,000</h3>
-                    <p class="text-sm text-gray-600">Provides study materials and uniform for one child's education.</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-lg transform hover:-translate-y-1 transition duration-300">
-                    <i class="fas fa-heartbeat text-red-500 text-3xl mb-4"></i>
-                    <h3 class="font-heading font-bold text-xl mb-2">₹2,500</h3>
-                    <p class="text-sm text-gray-600">Sponsors essential medicines for a rural health camp.</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-lg transform hover:-translate-y-1 transition duration-300">
-                    <i class="fas fa-female text-pink-500 text-3xl mb-4"></i>
-                    <h3 class="font-heading font-bold text-xl mb-2">₹5,000</h3>
-                    <p class="text-sm text-gray-600">Funds a vocational training kit for women's empowerment.</p>
-                </div>
-            </div>
-        </div>
+    <!-- Page Header -->
+    <header class="bg-blue-600 py-16 text-center text-white px-4">
+        <h1 class="font-heading text-4xl md:text-5xl font-bold mb-4">Meet Our Team</h1>
+        <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">The dedicated individuals working tirelessly to
+            create an equitable society.</p>
     </header>
 
-    <!-- Donation Section -->
+    <!-- Team Grid -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow -mt-8">
-        <div
-            class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100">
+        <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12 relative z-10">
 
-            <!-- UPI Payment Block -->
-            <div
-                class="flex flex-col items-center justify-center text-center border-b lg:border-b-0 lg:border-r border-gray-200 pb-10 lg:pb-0 lg:pr-10">
-                <span
-                    class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full mb-6 flex items-center gap-2"><i
-                        class="fas fa-lock"></i> 100% Secure Payment</span>
-                <h2 class="font-heading text-2xl font-bold text-gray-900 mb-2">Scan & Donate</h2>
-                <p class="text-gray-500 text-sm mb-8">Use any UPI app to make a direct contribution.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
 
-                <!-- QR Code Wrapper -->
-                <div
-                    class="bg-white p-4 border-2 border-dashed border-blue-300 rounded-2xl shadow-sm mb-6 inline-block">
-                    <!-- Replace the placeholder below with your actual QR code image -->
-                    <div class="w-48 h-48 bg-gray-50 flex items-center justify-center rounded-xl">
-                        <i class="fas fa-qrcode text-6xl text-blue-200"></i>
+                <!-- Member 1 -->
+                <div class="p-6 rounded-2xl border border-gray-50 hover:shadow-md transition-shadow duration-300">
+                    <img src="Representative-images/badri-gondeliya.jpeg" alt="Badri Prasad Gondeliya"
+                        class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-blue-50 shadow-sm">
+                    <h3 class="font-heading font-bold text-xl text-gray-900">Badri Prasad Gondeliya</h3>
+                    <p class="text-blue-600 font-medium text-sm mt-1 uppercase tracking-wide">President</p>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="p-6 rounded-2xl border border-gray-50 hover:shadow-md transition-shadow duration-300">
+                    <img src="Representative-images/Mangilal-akodiya.jpeg" alt="Mangilal Akodiya"
+                        class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-teal-50 shadow-sm">
+                    <h3 class="font-heading font-bold text-xl text-gray-900">Mangilal Akodiya</h3>
+                    <p class="text-teal-600 font-medium text-sm mt-1 uppercase tracking-wide">Vice President</p>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="p-6 rounded-2xl border border-gray-50 hover:shadow-md transition-shadow duration-300">
+                    <div
+                        class="w-32 h-32 mx-auto bg-gray-100 text-gray-400 rounded-full flex items-center justify-center text-4xl mb-4 border-4 border-white shadow-sm">
+                        <i class="fas fa-user"></i>
                     </div>
+                    <h3 class="font-heading font-bold text-xl text-gray-900">Kailash Patel</h3>
+                    <p class="text-gray-500 font-medium text-sm mt-1 uppercase tracking-wide">Core Member</p>
                 </div>
 
-                <div class="bg-gray-50 px-6 py-3 rounded-lg w-full mb-6">
-                    <p class="text-xs text-gray-500 uppercase tracking-wide font-bold mb-1">Official UPI ID</p>
-                    <p class="font-mono text-lg text-gray-900 font-semibold select-all">ngodonations@upi</p>
+                <!-- Member 4 -->
+                <div class="p-6 rounded-2xl border border-gray-50 hover:shadow-md transition-shadow duration-300">
+                    <div
+                        class="w-32 h-32 mx-auto bg-gray-100 text-gray-400 rounded-full flex items-center justify-center text-4xl mb-4 border-4 border-white shadow-sm">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-gray-900">Dashrath Kolewaar</h3>
+                    <p class="text-gray-500 font-medium text-sm mt-1 uppercase tracking-wide">Core Member</p>
                 </div>
 
-                <div class="flex gap-4 justify-center items-center">
-                    <span class="text-gray-400 font-bold text-sm">Supported:</span>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="GPay"
-                        class="h-5 opacity-70">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe"
-                        class="h-5 opacity-70">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg"
-                        alt="Paytm" class="h-4 opacity-70">
+                <!-- Member 5 -->
+                <div class="p-6 rounded-2xl border border-gray-50 hover:shadow-md transition-shadow duration-300">
+                    <div
+                        class="w-32 h-32 mx-auto bg-gray-100 text-gray-400 rounded-full flex items-center justify-center text-4xl mb-4 border-4 border-white shadow-sm">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-gray-900">Prashant Akodiya</h3>
+                    <p class="text-gray-500 font-medium text-sm mt-1 uppercase tracking-wide">Core Member</p>
                 </div>
+
+                <!-- Member 6 -->
+                <div class="p-6 rounded-2xl border border-gray-50 hover:shadow-md transition-shadow duration-300">
+                    <div
+                        class="w-32 h-32 mx-auto bg-gray-100 text-gray-400 rounded-full flex items-center justify-center text-4xl mb-4 border-4 border-white shadow-sm">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-gray-900">Himmat Singh Moriya</h3>
+                    <p class="text-gray-500 font-medium text-sm mt-1 uppercase tracking-wide">Core Member</p>
+                </div>
+
             </div>
-
-            <!-- Bank Details Block -->
-            <div class="flex flex-col justify-center lg:pl-6">
-                <h2 class="font-heading text-2xl font-bold text-gray-900 mb-2">Direct Bank Transfer</h2>
-                <p class="text-gray-500 text-sm mb-8">Prefer to use NEFT/RTGS/IMPS? Use the details below.</p>
-
-                <div class="space-y-4">
-                    <div class="border border-gray-100 p-4 rounded-xl bg-gray-50">
-                        <p class="text-xs text-gray-500 mb-1">Account Name</p>
-                        <p class="font-semibold text-gray-900">Shree Brijwasi Jatav Samaj Sewa Samiti</p>
-                    </div>
-                    <div class="border border-gray-100 p-4 rounded-xl bg-gray-50">
-                        <p class="text-xs text-gray-500 mb-1">Account Number</p>
-                        <p class="font-mono font-semibold text-gray-900 select-all">XXXX-XXXX-XXXX-XXXX</p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="border border-gray-100 p-4 rounded-xl bg-gray-50">
-                            <p class="text-xs text-gray-500 mb-1">IFSC Code</p>
-                            <p class="font-mono font-semibold text-gray-900 select-all">BANK000XXXX</p>
-                        </div>
-                        <div class="border border-gray-100 p-4 rounded-xl bg-gray-50">
-                            <p class="text-xs text-gray-500 mb-1">Bank Name</p>
-                            <p class="font-semibold text-gray-900">State Bank of India</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-8 bg-blue-50 p-4 rounded-xl border border-blue-100 flex items-start gap-4">
-                    <i class="fas fa-info-circle text-blue-500 mt-1"></i>
-                    <p class="text-sm text-blue-800">
-                        After completing a bank transfer, please email your transaction receipt to <a
-                            href="mailto:vraajyadav1988@gmail.com"
-                            class="font-bold underline">vraajyadav1988@gmail.com</a> so we can issue your donation
-                        receipt.
-                    </p>
-                </div>
-            </div>
-
         </div>
     </main>
 
     <!-- Footer Section -->
-    <footer class="bg-gray-900 text-gray-300 py-12 mt-auto border-t border-gray-800">
+    <footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
                 <div>
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="h-10 w-10 rounded-full flex items-center justify-center overflow-hidden shrink-0">
-                            <img src="static images/logo.png" alt="Samiti Logo" class="h-full w-full object-cover">
-                        </div>
+                        <img src="static images/logo.png" alt="Logo"
+                            class="h-8 w-8 rounded-full border border-yellow-300 object-cover">
                         <span class="font-heading font-semibold text-white text-lg leading-tight">Shree Brijwasi Jatav
                             Samaj<br>Sewa Samiti</span>
                     </div>
@@ -246,8 +218,8 @@
                             <div class="flex flex-col"><span>+91 9630145866</span><span>+91 9993705606</span></div>
                         </li>
                         <li class="flex items-center gap-3"><i class="fas fa-envelope text-blue-500"></i><a
-                                href="mailto:brijwasijatavsevasamiti@gmail.com"
-                                class="hover:text-white transition">brijwasijatavsevasamiti@gmail.com</a></li>
+                                href="mailto:vraajyadav1988@gmail.com"
+                                class="hover:text-white transition">vraajyadav1988@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -258,13 +230,24 @@
     </footer>
 
     <script>
+        // Standard Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
         const icon = btn.querySelector('i');
         const nav = document.querySelector('nav');
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('hidden');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // About Us Mobile Dropdown Toggle
         const aboutToggle = document.getElementById('mobile-about-toggle');
         const aboutMenu = document.getElementById('mobile-about-menu');
         const aboutIcon = document.getElementById('mobile-about-icon');
+
         if (aboutToggle) {
             aboutToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -272,9 +255,24 @@
                 aboutIcon.classList.toggle('rotate-180');
             });
         }
-        btn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('hidden'); icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-times'); });
-        document.addEventListener('click', (e) => { if (!menu.contains(e.target) && !btn.contains(e.target) && !menu.classList.contains('hidden')) { menu.classList.add('hidden'); icon.classList.add('fa-bars'); icon.classList.remove('fa-times'); } });
-        window.addEventListener('scroll', () => { if (window.scrollY > 10) { nav.classList.add('shadow-md'); nav.classList.remove('shadow-sm'); } else { nav.classList.remove('shadow-md'); nav.classList.add('shadow-sm'); } });
+
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !btn.contains(e.target) && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('shadow-sm');
+            }
+        });
     </script>
 </body>
 

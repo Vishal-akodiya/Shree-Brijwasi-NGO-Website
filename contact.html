@@ -22,18 +22,28 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
-                    <div class="h-10 w-10 rounded-full flex items-center justify-center overflow-hidden shrink-0">
-                        <img src="static images/logo.png" alt="Samiti Logo" class="h-full w-full object-cover">
-                    </div>
+                    <img src="static images/logo.png" alt="Logo"
+                        class="h-10 w-10 rounded-full border border-yellow-300 object-cover">
                     <span class="font-heading font-semibold text-gray-900 md:text-lg text-sm">Shree Brijwasi Jatav Samaj
                         Sewa Samiti</span>
                 </div>
                 <div class="hidden lg:flex items-center space-x-1">
                     <a href="index.html"
                         class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Home</a>
-                    <a href="about.html"
-                        class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">About
-                        Us</a>
+                    <div class="relative group">
+                        <button
+                            class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition flex items-center gap-1">
+                            About Us <i class="fas fa-chevron-down text-[10px]"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-48 bg-white border border-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="about.html"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 border-b border-gray-50">Overview</a>
+                            <a href="team.html"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Our
+                                Team</a>
+                        </div>
+                    </div>
                     <a href="work.html"
                         class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Our
                         Work</a>
@@ -61,9 +71,20 @@
             class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-1 shadow-lg absolute w-full">
             <a href="index.html"
                 class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">Home</a>
-            <a href="about.html"
-                class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">About
-                Us</a>
+            <div class="space-y-1">
+                <button id="mobile-about-toggle"
+                    class="w-full text-left text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base flex justify-between items-center">
+                    About Us <i class="fas fa-chevron-down text-sm transition-transform duration-300"
+                        id="mobile-about-icon"></i>
+                </button>
+                <div id="mobile-about-menu" class="hidden pl-4 space-y-1">
+                    <a href="about.html"
+                        class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-sm">Overview</a>
+                    <a href="team.html"
+                        class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-sm">Our
+                        Team</a>
+                </div>
+            </div>
             <a href="work.html"
                 class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">Our
                 Work</a>
@@ -247,7 +268,17 @@
         const menu = document.getElementById('mobile-menu');
         const icon = btn.querySelector('i');
         const nav = document.querySelector('nav');
+        const aboutToggle = document.getElementById('mobile-about-toggle');
+        const aboutMenu = document.getElementById('mobile-about-menu');
+        const aboutIcon = document.getElementById('mobile-about-icon');
         btn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('hidden'); icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-times'); });
+        if (aboutToggle) {
+            aboutToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                aboutMenu.classList.toggle('hidden');
+                aboutIcon.classList.toggle('rotate-180');
+            });
+        }
         document.addEventListener('click', (e) => { if (!menu.contains(e.target) && !btn.contains(e.target) && !menu.classList.contains('hidden')) { menu.classList.add('hidden'); icon.classList.add('fa-bars'); icon.classList.remove('fa-times'); } });
         window.addEventListener('scroll', () => { if (window.scrollY > 10) { nav.classList.add('shadow-md'); nav.classList.remove('shadow-sm'); } else { nav.classList.remove('shadow-md'); nav.classList.add('shadow-sm'); } });
     </script>
