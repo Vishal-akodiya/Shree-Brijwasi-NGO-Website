@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shree Brijwasi Jatav Samaj Sewa Samiti</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -15,16 +18,34 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Poppins', 'sans-serif'] },
-                    colors: { primary: '#3b82f6', tealBadge: '#2dd4bf' }
+                    colors: { primary: '#3b82f6', tealBadge: '#2dd4bf', ctaBlue: '#5e94d4' }
                 }
             }
         }
     </script>
     <style>
-        .heading-underline { position: relative; display: inline-block; }
-        .heading-underline::after { content: ''; position: absolute; width: 60%; height: 3px; background-color: #3b82f6; bottom: -5px; left: 20%; }
+        .heading-underline {
+            position: relative;
+            display: inline-block;
+        }
+
+        .heading-underline::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background-color: #3b82f6;
+            bottom: -5px;
+            left: 20%;
+        }
+
+        /* CSS to hide elements before animation starts */
+        .stat-number {
+            visibility: hidden;
+        }
     </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
 
     <!-- Navigation Bar -->
@@ -32,42 +53,61 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
-                    <div class="h-10 w-10 bg-yellow-100 rounded-full flex items-center justify-center border border-yellow-300 overflow-hidden">
-                        <i class="fas fa-sun text-yellow-500"></i>
-                    </div>
-                    <span class="font-heading font-semibold text-gray-900 md:text-lg text-sm">
-                        Shree Brijwasi Jatav Samaj Sewa Samiti
-                    </span>
+                    <img src="static images/logo.png" alt="Logo"
+                        class="h-10 w-10 rounded-full border border-yellow-300 object-cover">
+                    <span class="font-heading font-semibold text-gray-900 md:text-lg text-sm">Shree Brijwasi Jatav Samaj
+                        Sewa Samiti</span>
                 </div>
                 <div class="hidden lg:flex items-center space-x-1">
-                    <a href="index.html" class="bg-blue-50 text-blue-600 px-4 py-2 rounded-md font-medium text-sm">Home</a>
-                    <a href="about.html" class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">About Us</a>
-                    <a href="work.html" class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Our Work</a>
-                    <a href="media.html" class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Media</a>
-                    <a href="contact.html" class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Contact</a>
+                    <a href="index.html"
+                        class="bg-blue-50 text-blue-600 px-4 py-2 rounded-md font-medium text-sm">Home</a>
+                    <a href="about.html"
+                        class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">About
+                        Us</a>
+                    <a href="work.html"
+                        class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Our
+                        Work</a>
+                    <a href="media.html"
+                        class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Media</a>
+                    <a href="contact.html"
+                        class="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md font-medium text-sm transition">Contact</a>
                 </div>
                 <div class="hidden lg:flex items-center space-x-3">
-                    <a href="donate.html" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md font-medium text-sm transition shadow-sm">Donate Now</a>
-                    <a href="volunteer.html" class="border border-blue-200 text-blue-600 hover:bg-blue-50 px-5 py-2 rounded-md font-medium text-sm transition flex items-center gap-2">
+                    <a href="donate.html"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md font-medium text-sm transition shadow-sm">Donate
+                        Now</a>
+                    <a href="volunteer.html"
+                        class="border border-blue-200 text-blue-600 hover:bg-blue-50 px-5 py-2 rounded-md font-medium text-sm transition flex items-center gap-2">
                         <i class="fas fa-hands-helping"></i> Volunteer
                     </a>
                 </div>
                 <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none"><i
+                            class="fas fa-bars text-2xl"></i></button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-1 shadow-lg absolute w-full">
-            <a href="index.html" class="block bg-blue-50 text-blue-600 px-3 py-2 rounded-md font-medium text-base">Home</a>
-            <a href="about.html" class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">About Us</a>
-            <a href="work.html" class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">Our Work</a>
-            <a href="media.html" class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">Media</a>
-            <a href="contact.html" class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">Contact</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-1 shadow-lg absolute w-full">
+            <a href="index.html"
+                class="block bg-blue-50 text-blue-600 px-3 py-2 rounded-md font-medium text-base">Home</a>
+            <a href="about.html"
+                class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">About
+                Us</a>
+            <a href="work.html"
+                class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">Our
+                Work</a>
+            <a href="media.html"
+                class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">Media</a>
+            <a href="contact.html"
+                class="block text-gray-600 hover:bg-gray-50 hover:text-blue-600 px-3 py-2 rounded-md font-medium text-base">Contact</a>
             <div class="pt-4 flex flex-col gap-2">
-                <a href="donate.html" class="block text-center bg-blue-600 text-white px-3 py-2 rounded-md font-medium text-base">Donate Now</a>
-                <a href="volunteer.html" class="block text-center border border-blue-200 text-blue-600 px-3 py-2 rounded-md font-medium text-base">Volunteer</a>
+                <a href="donate.html"
+                    class="block text-center bg-blue-600 text-white px-3 py-2 rounded-md font-medium text-base">Donate
+                    Now</a>
+                <a href="volunteer.html"
+                    class="block text-center border border-blue-200 text-blue-600 px-3 py-2 rounded-md font-medium text-base">Volunteer</a>
             </div>
         </div>
     </nav>
@@ -76,18 +116,23 @@
     <header class="relative bg-gray-900 h-[70vh] min-h-[500px] flex items-center justify-center text-center">
         <!-- Background Image Slider -->
         <div class="absolute inset-0 overflow-hidden z-0">
-            <img src="slider-images/slide1.jpg" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100">
-            <img src="slider-images/img_2.jpg" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
-            <img src="slider-images/img_3.jpg" class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+            <img src="slider-images/slide1.jpg"
+                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100">
+            <img src="slider-images/img_2.jpg"
+                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+            <img src="slider-images/img_3.jpg"
+                class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
             <div class="absolute inset-0 bg-blue-900/50 mix-blend-multiply z-10"></div>
         </div>
-        
+
         <!-- Hero Content -->
         <div class="relative z-20 px-4 max-w-4xl mx-auto">
-            <span class="inline-block bg-pink-200/90 text-pink-800 text-xs font-bold px-4 py-1.5 rounded-full mb-6 shadow-sm backdrop-blur-sm">
+            <span
+                class="inline-block bg-pink-200/90 text-pink-800 text-xs font-bold px-4 py-1.5 rounded-full mb-6 shadow-sm backdrop-blur-sm">
                 Empowering Communities Since 2011
             </span>
-            <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg leading-tight">
+            <h1
+                class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg leading-tight">
                 Shree Brijwasi Jatav Samaj<br>Sewa Samiti
             </h1>
             <p class="text-lg md:text-xl text-gray-200 font-medium drop-shadow-md">
@@ -96,60 +141,257 @@
         </div>
     </header>
 
+    <!-- Our Core Purpose Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                <!-- Image Side with Overlay Card -->
+                <div class="relative">
+                    <img src="static images/About-us-Image.jpg" alt="Community Event"
+                        class="w-full h-auto rounded-2xl shadow-lg object-cover">
+                    <!-- Overlay Card -->
+                    <div
+                        class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs border border-gray-100 hidden md:block">
+                        <h3 class="font-heading text-4xl font-bold text-blue-600 mb-1">100%</h3>
+                        <p class="text-gray-600 text-sm font-medium">Transparency in all our operations and fund usage.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Text Side -->
+                <div class="w-full">
+                    <span class="text-blue-600 font-bold text-sm tracking-wider uppercase mb-2 block">Our Core
+                        Purpose</span>
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-10 leading-tight">Making the
+                        World a Better Place for Everyone</h2>
+
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="mt-1"><i class="far fa-dot-circle text-2xl text-blue-500"></i></div>
+                            <div>
+                                <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Our Mission</h3>
+                                <p class="text-gray-500 leading-relaxed">To empower underprivileged communities through
+                                    quality education, accessible healthcare, and sustainable livelihood opportunities,
+                                    ensuring dignity and equality for all. We strive to create an inclusive society
+                                    where every individual can realize their full potential.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="mt-1"><i class="far fa-check-circle text-2xl text-green-500"></i></div>
+                            <div>
+                                <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Our Vision</h3>
+                                <p class="text-gray-500 leading-relaxed">A just and equitable society where every
+                                    individual, regardless of their background, has access to education, healthcare, and
+                                    opportunities for growth. We envision communities that are self-reliant, empowered,
+                                    and living with dignity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="about.html"
+                        class="inline-block mt-8 border-2 border-blue-600 text-blue-600 font-semibold px-8 py-3 rounded-full hover:bg-blue-600 hover:text-white transition duration-300">Learn
+                        More About Us</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Data Banner (Animated) -->
+    <section class="bg-ctaBlue py-16" id="impact-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-users text-3xl mb-4 opacity-90"></i>
+                    <!-- Data attributes hold the target number and formatting type -->
+                    <h3 class="font-heading text-4xl font-bold mb-1 stat-number" data-target="15000"
+                        data-format="comma">0</h3>
+                    <p class="text-xs uppercase tracking-widest font-semibold opacity-80">Lives Impacted</p>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-project-diagram text-3xl mb-4 opacity-90"></i>
+                    <h3 class="font-heading text-4xl font-bold mb-1 stat-number" data-target="50" data-format="plus">0
+                    </h3>
+                    <p class="text-xs uppercase tracking-widest font-semibold opacity-80">Projects Completed</p>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <i class="far fa-calendar-alt text-3xl mb-4 opacity-90"></i>
+                    <h3 class="font-heading text-4xl font-bold mb-1 stat-number" data-target="15" data-format="none">0
+                    </h3>
+                    <p class="text-xs uppercase tracking-widest font-semibold opacity-80">Years of Service</p>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <i class="far fa-handshake text-3xl mb-4 opacity-90"></i>
+                    <h3 class="font-heading text-4xl font-bold mb-1 stat-number" data-target="200" data-format="plus">0
+                    </h3>
+                    <p class="text-xs uppercase tracking-widest font-semibold opacity-80">Active Volunteers</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Recent Projects Section -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            
+
             <div class="mb-14">
-                <h2 class="font-heading text-3xl md:text-4xl font-bold text-blue-600 mb-4 heading-underline pb-2">Recent Projects</h2>
+                <span class="text-blue-600 font-bold text-sm tracking-wider uppercase mb-2 block">Our Work</span>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-blue-600 mb-4 heading-underline pb-2">Recent
+                    Projects</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base mt-6">
                     Explore our initiatives and projects that are bringing positive change to the ground.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                <!-- Card 1: Health -->
-                <div class="bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left mb-12">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow duration-300">
                     <div class="relative h-56">
                         <img src="project-gallary/img_2.jpg" alt="Health Camp" class="w-full h-full object-cover">
-                        <span class="absolute top-4 right-4 bg-tealBadge text-white text-xs font-bold px-3 py-1 rounded-sm shadow-sm">Health</span>
+                        <span
+                            class="absolute top-4 right-4 bg-tealBadge text-white text-xs font-bold px-3 py-1 rounded-sm shadow-sm">Health</span>
                     </div>
                     <div class="p-6">
                         <h3 class="font-heading font-bold text-xl text-gray-900 mb-3">Rural Health Camp Program</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">Free medical camps providing healthcare access to underserved rural communities.</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">Free medical camps providing healthcare access
+                            to underserved rural communities.</p>
                     </div>
                 </div>
 
-                <!-- Card 2: Women Empowerment -->
-                <div class="bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                <!-- Card 2 -->
+                <div
+                    class="bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow duration-300">
                     <div class="relative h-56">
                         <img src="project-gallary/img_3.jpg" alt="Women Empowerment" class="w-full h-full object-cover">
-                        <span class="absolute top-4 right-4 bg-tealBadge text-white text-xs font-bold px-3 py-1 rounded-sm shadow-sm">Women Empowerment</span>
+                        <span
+                            class="absolute top-4 right-4 bg-tealBadge text-white text-xs font-bold px-3 py-1 rounded-sm shadow-sm">Women
+                            Empowerment</span>
                     </div>
                     <div class="p-6">
                         <h3 class="font-heading font-bold text-xl text-gray-900 mb-3">Women Empowerment Workshop</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">Empowering women through skill development, vocational training, and financial literacy programs.</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">Empowering women through skill development,
+                            vocational training, and financial literacy programs.</p>
                     </div>
                 </div>
 
-                <!-- Card 3: Education -->
-                <div class="bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                <!-- Card 3 -->
+                <div
+                    class="bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow duration-300">
                     <div class="relative h-56">
-                        <img src="project-gallary/img_4.jpg" alt="Education Initiative" class="w-full h-full object-cover">
-                        <span class="absolute top-4 right-4 bg-tealBadge text-white text-xs font-bold px-3 py-1 rounded-sm shadow-sm">Education</span>
+                        <img src="project-gallary/img_4.jpg" alt="Education Initiative"
+                            class="w-full h-full object-cover">
+                        <span
+                            class="absolute top-4 right-4 bg-tealBadge text-white text-xs font-bold px-3 py-1 rounded-sm shadow-sm">Education</span>
                     </div>
                     <div class="p-6">
                         <h3 class="font-heading font-bold text-xl text-gray-900 mb-3">Education for All Initiative</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">Providing quality education and scholarships to underprivileged children across Delhi-NCR region.</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">Providing quality education and scholarships to
+                            underprivileged children across Delhi-NCR region.</p>
                     </div>
+                </div>
+            </div>
+
+            <a href="work.html"
+                class="inline-block bg-ctaBlue text-white font-semibold px-8 py-3 rounded-full hover:bg-blue-600 transition shadow-sm">View
+                All Projects</a>
+        </div>
+    </section>
+
+    <!-- Become a Part of Change CTA Banner -->
+    <section class="py-16 bg-white mb-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Background matching the screenshot gradient -->
+            <div
+                class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-12 md:p-16 text-center text-white shadow-xl">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">Become a Part of Change</h2>
+                <p class="text-blue-50 mb-10 text-base max-w-3xl mx-auto leading-relaxed">Your generous contribution
+                    enables us to continue transforming lives. Every rupee you donate goes directly towards education,
+                    healthcare, and community development programs. Together, we can create lasting change.</p>
+
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="donate.html"
+                        class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-gray-50 transition shadow-sm w-full sm:w-auto">Support
+                        Now</a>
+                    <a href="volunteer.html"
+                        class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-blue-600 transition w-full sm:w-auto">Volunteer
+                        With Us</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mobile Menu & Scroll Script -->
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-auto border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="static images/logo.png" alt="Logo"
+                            class="h-8 w-8 rounded-full border border-yellow-300 object-cover">
+                        <span class="font-heading font-semibold text-white text-lg leading-tight">Shree Brijwasi Jatav
+                            Samaj<br>Sewa Samiti</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-6 leading-relaxed pr-4">Dedicated to uplifting marginalized
+                        communities through education, healthcare, and sustainable development. Bridging the gap between
+                        privilege and poverty.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="h-9 w-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="h-9 w-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 hover:text-white transition duration-300"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#"
+                            class="h-9 w-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 hover:text-white transition duration-300"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-heading font-semibold text-white text-lg mb-6">Quick Links</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-blue-400 transition"><i
+                                    class="fas fa-chevron-right text-[10px] mr-2"></i> Home</a></li>
+                        <li><a href="about.html" class="hover:text-blue-400 transition"><i
+                                    class="fas fa-chevron-right text-[10px] mr-2"></i> About Us</a></li>
+                        <li><a href="work.html" class="hover:text-blue-400 transition"><i
+                                    class="fas fa-chevron-right text-[10px] mr-2"></i> Our Work</a></li>
+                        <li><a href="media.html" class="hover:text-blue-400 transition"><i
+                                    class="fas fa-chevron-right text-[10px] mr-2"></i> Media Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-400 transition"><i
+                                    class="fas fa-chevron-right text-[10px] mr-2"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading font-semibold text-white text-lg mb-6">Contact Us</h3>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3"><i
+                                class="fas fa-map-marker-alt mt-1 text-blue-500"></i><span>Bhopal,<br>Madhya Pradesh,
+                                India</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-phone text-blue-500 mt-1"></i>
+                            <div class="flex flex-col"><span>+91 9630145866</span><span>+91 9993705606</span></div>
+                        </li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope text-blue-500"></i><a
+                                href="mailto:vraajyadav1988@gmail.com"
+                                class="hover:text-white transition">vraajyadav1988@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2026 Shree Brijwasi Jatav Samaj Sewa Samiti. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
     <script>
-        // Mobile Menu Toggle
+        // 1. Mobile Menu & Navbar Shadow
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
         const icon = btn.querySelector('i');
@@ -170,7 +412,6 @@
             }
         });
 
-        // Dynamic navbar shadow
         window.addEventListener('scroll', () => {
             if (window.scrollY > 10) {
                 nav.classList.add('shadow-md');
@@ -181,74 +422,68 @@
             }
         });
 
-        // Hero Image Slider
+        // 2. Hero Image Slider
         const slides = document.querySelectorAll('.hero-slide');
         let currentSlide = 0;
-        
         setInterval(() => {
             slides[currentSlide].classList.replace('opacity-100', 'opacity-0');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.replace('opacity-0', 'opacity-100');
         }, 5000);
+
+        // 3. Number Counter Animation using IntersectionObserver
+        const stats = document.querySelectorAll('.stat-number');
+        let animated = false; // Ensure it only animates once
+
+        // Function to animate a single number
+        const animateNumber = (element) => {
+            element.style.visibility = 'visible'; // Unhide when animation starts
+            const target = parseInt(element.getAttribute('data-target'));
+            const formatType = element.getAttribute('data-format');
+            const duration = 2000; // Total animation time in ms
+            const frameRate = 30; // Frames per second
+            const totalFrames = Math.round((duration / 1000) * frameRate);
+            let currentFrame = 0;
+
+            const counter = setInterval(() => {
+                currentFrame++;
+                // Easing function for smooth slowdown at the end
+                const progress = currentFrame / totalFrames;
+                const currentCount = Math.round(target * (1 - Math.pow(1 - progress, 3)));
+
+                // Apply formatting based on HTML data attribute
+                if (formatType === 'comma') {
+                    element.innerText = currentCount.toLocaleString();
+                } else if (formatType === 'plus') {
+                    element.innerText = currentCount + '+';
+                } else {
+                    element.innerText = currentCount;
+                }
+
+                if (currentFrame === totalFrames) {
+                    clearInterval(counter);
+                    // Ensure exact target is set at the end
+                    if (formatType === 'comma') element.innerText = target.toLocaleString();
+                    if (formatType === 'plus') element.innerText = target + '+';
+                }
+            }, 1000 / frameRate);
+        };
+
+        // Observer to detect when the stats section scrolls into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
+                    stats.forEach(stat => animateNumber(stat));
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+
+        const impactSection = document.getElementById('impact-section');
+        if (impactSection) {
+            observer.observe(impactSection);
+        }
     </script>
 </body>
-<footer class="bg-gray-900 text-gray-300 py-12 mt-auto border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="h-8 w-8 bg-yellow-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-sun text-yellow-500 text-sm"></i>
-                        </div>
-                        <span class="font-heading font-semibold text-white text-lg leading-tight">Shree Brijwasi Jatav Samaj<br>Sewa Samiti</span>
-                    </div>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed pr-4">
-                        Dedicated to uplifting marginalized communities through education, healthcare, and sustainable development. Bridging the gap between privilege and poverty.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="h-9 w-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="h-9 w-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 hover:text-white transition duration-300"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="h-9 w-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="font-heading font-semibold text-white text-lg mb-6">Quick Links</h3>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li><a href="index.html" class="hover:text-blue-400 hover:translate-x-1 inline-block transition transform duration-200"><i class="fas fa-chevron-right text-[10px] mr-2"></i> Home</a></li>
-                        <li><a href="about.html" class="hover:text-blue-400 hover:translate-x-1 inline-block transition transform duration-200"><i class="fas fa-chevron-right text-[10px] mr-2"></i> About Us</a></li>
-                        <li><a href="work.html" class="hover:text-blue-400 hover:translate-x-1 inline-block transition transform duration-200"><i class="fas fa-chevron-right text-[10px] mr-2"></i> Our Work</a></li>
-                        <li><a href="media.html" class="hover:text-blue-400 hover:translate-x-1 inline-block transition transform duration-200"><i class="fas fa-chevron-right text-[10px] mr-2"></i> Media Gallery</a></li>
-                        <li><a href="contact.html" class="hover:text-blue-400 hover:translate-x-1 inline-block transition transform duration-200"><i class="fas fa-chevron-right text-[10px] mr-2"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-heading font-semibold text-white text-lg mb-6">Contact Us</h3>
-                    <ul class="space-y-4 text-sm text-gray-400">
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt mt-1 text-blue-500"></i>
-                            <span>Bhopal,<br>Madhya Pradesh, India</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-phone text-blue-500 mt-1"></i>
-                            <div class="flex flex-col">
-                                <span>+91 9630145866</span>
-                                <span>+91 9993705606</span>
-                            </div>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-blue-500"></i>
-                            <a href="mailto:vraajyadav1988@gmail.com" class="hover:text-white transition">vraajyadav1988@gmail.com</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                <p>&copy; 2026 Shree Brijwasi Jatav Samaj Sewa Samiti. All rights reserved.</p>
-                <div class="mt-4 md:mt-0 space-x-6">
-                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition">Terms & Conditions</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+
 </html>
